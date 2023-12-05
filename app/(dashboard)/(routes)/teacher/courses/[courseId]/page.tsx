@@ -1,10 +1,11 @@
 import { redirect } from "next/navigation";
-import { db } from "../../../../../../lib/db";
+import { db } from "@/lib/db";
 
 import { auth } from "@clerk/nextjs";
 import { IconBadge } from "@/components/icon-badge";
 import { LayoutDashboard } from "lucide-react";
 import TitleForm from "./_components/title-form";
+import DescriptionForm from "./_components/description-form";
 
 const CourseIdPage = async ({
   params,
@@ -58,6 +59,7 @@ const CourseIdPage = async ({
             <h2 className="text-2xl">Customize your course</h2>
           </div>
           <TitleForm initialData={course} courseId={course.id} />
+          <DescriptionForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
